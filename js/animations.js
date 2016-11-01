@@ -28,6 +28,18 @@
   }
 
 
+  $('p').click(function() {
+    var words = $(this).text().split(' ');
+
+    for (var i = Math.floor(Math.random() * (5 - 1)); i < words.length; i) {
+      var random = getRandomColor();
+      words[i] = "<span style='color:" + random + "'>" + words[i] +"</span>";
+      i += Math.floor(Math.random() * (5 - 1));
+    }
+    words = words.join(" ");
+    $(this).html(words);
+  });
+
 
   $('.button').click(function() {
     var words = $('.rainbow').text().split(' ');
